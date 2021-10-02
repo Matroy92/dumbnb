@@ -11,6 +11,9 @@
   </head>
 
   <body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://risibank.fr/cache/stickers/d1932/193283-full.png" %>
@@ -43,6 +46,7 @@
     </ul>
   </div>
 </div>
+
     <%= yield %>
   </body>
 </html>
