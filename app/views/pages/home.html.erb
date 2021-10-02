@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main>
+<div class="pt-5 text-center">
+  <h1 class="display-2">Dumbnb</h1>
+    <h3>Trouvez le con le plus proche de chez vous.</h3>
+    <p><em>Votre belle-mère est encombrante ? Invitez un con pour vous en débarasser.</em></p>
+    <%= image_tag "francois_pignon.png", width: 200, class: "img-circle" %>
+</div>
+<div class="py-1 text-center">
+<%= link_to "Je loue un con", "#", class: "btn btn-flat" %>
+</div>
+<div class="col-xs-12" style="height:100px;"></div>
+</div>
+<div class="pt-3 text-center">
+<h3>Les cons les plus tendances ⭐</h3>
+<div class="pt-2 card-home">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "gif_pignon.gif" %>')">
+    Juste Leblanc
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "guy.jpg" %>')">
+    David Hollyday
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "pecheur.jpg" %>')">
+    Jean-Pierre Mouchon
+  </div>
+</div>
+</div>
+</main>
