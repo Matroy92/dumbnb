@@ -13,7 +13,7 @@ import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFrYXJpYWxtaiIsImEiOiJja3N0N2F4OHIwd2dzMnBwbnk0cGhydW9hIn0.lYL98kS1OqDKdf2SJtcyQg';
 const map = new mapboxgl.Map({
-  container: 'YOUR_CONTAINER_ELEMENT_ID',
+  container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11'
 });
 // Uncomment to copy all static images under ../images to the output folder and reference
