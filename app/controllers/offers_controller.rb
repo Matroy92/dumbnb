@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
     def index
         @offers = Offer.all
-      end
+    end
     
       def show
         @offer = Offer.find(params[:id])
