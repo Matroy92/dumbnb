@@ -28,7 +28,9 @@
 
 .navbar-light .navbar-nav .nav-link {
   color:pink;
-  margin: 12px;
+  margin: 5px;
+  text-align: center;
+
   &:hover {
     color:white;
   }
@@ -57,7 +59,7 @@
   box-sizing: border-box;
 }
 
-.container {
+.searchbar{
   position: absolute;
   margin: auto;
   top: 0;
@@ -173,4 +175,13 @@
       font-weight: bolder;
     }
   }
+}
+
+.color {
+  color: pink;
+  margin-right: 5px;
+}
+
+.marge {
+  margin: 7px;
 }

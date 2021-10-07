@@ -19,11 +19,12 @@
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
     </div>
-
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-outline-info color">
       <%= f.button :submit, "Sign up" %>
-    </div>
+    </button>
   <% end %>
-
+<br>
+  <button type="button" class="btn btn-outline-info color">
   <%= render "devise/shared/links" %>
+  </button>
 </div>
