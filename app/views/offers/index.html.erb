@@ -1,31 +1,22 @@
+<% @offer.each do |offer| %>
 <div class="row">
   <div class="card mb-3 m-3" style="width: 350px;">
     <div class="card-user">
-      <div class="card-photo"> <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <div class="card-photo"> <img src="<%= image_path "guy.jpg" %>">
         <div class="card-body">
           <div class="row">
           <div class="col-8"> <h2 class="card-name"></h2> </div>
           <div class="col"><p><span style="font-size: 10px; color: #DBBA00;"><i class="fas fa-star"></i></div>
           </div>
-          <h5 class="card-desciption">Baseline</h2>
-          <p class="card-price"> / heure </p>
+          <h5 class="card-desciption"><%= offer.small_description =%></h2>
+          <p class="card-price"><%=offer.hour_rate%>€ / heure </p>
       </div>
     </div>
   </div>
 </div>
-
-   <div class="card mb-3 m-3" style="width: 350px;">
-    <div class="card-user">
-      <div class="card-photo"> <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-      <div class="card-body">
-      <div class="row">
-       <div class="col-8"> <h2 class="card-name"></h2> </div>
-      <div class="col"><p><span style="font-size: 10px; color: #DBBA00;"><i class="fas fa-star"></i></div>
-      </div>
-      <h5 class="card-desciption">Baseline</h2>
-        <p class="card-price"> / heure </p>
-    </div>
-    </div>
-    </div>
-  </div>
+<% end %>
+  <div 
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  ></div>
 </div>
