@@ -1,4 +1,4 @@
-<% @offer.each do |offer| %>
+<% @offers.each do |offer| %>
 <div class="row">
   <div class="card mb-3 m-3" style="width: 350px;">
     <div class="card-user">
@@ -18,7 +18,7 @@
   <div 
   id="map"
   style= "height: 600px; width: 100%"
-  data-map-box-api="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
