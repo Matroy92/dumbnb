@@ -1,25 +1,26 @@
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
-<% @offers.each do |offer| %>
-<div class="row">
-  <div class="card m-3" style="width: 300px;">
-    <div class="card-user">
-      <div class="card-photo"> <img src="<%= image_path "guy.jpg" %>">
-        <div class="card-body">
-          <div class="row">
-          <div class="col-8"> <h2 class="card-name"> <%=offer.user_id %> </h2> </div>
-          <div class="col"><p><span style="font-size: 10px; color: #DBBA00;"><i class="fas fa-star"></i></div>
-          </div>
-          <h5 class="card-desciption"><%= offer.small_description =%></h5>
-          <p class="card-price"><%= offer.hour_rate %>€ / heure </p>
-      </div>
+<div class="main-container">
+  <div class="container-card">
+    <div class="cards">
+      <% @offers.each do |offer| %>
+          <div class="m-3" style="width: 300px;">
+            <div class="card-user">
+              <div class="card-photo"> <img src="<%= image_path "guy.jpg" %>">
+                <div class="card-body" style="height: 170px">
+                  <div class="row">
+                    <div class="col-8"> <h2 class="card-name"> <%=offer.user_id %> </h2>
+                    </div>
+                    <div class="col"><p><span style="font-size: 10px; color: #DBBA00;"><i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                    <h5 class="card-desciption"><%= offer.small_description =%></h5>
+                    <p class="card-price"><%= offer.hour_rate %>€ / heure </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
-<% end %>
-  <div 
-  id="map"
-  style= "height: 600px; width: 100%"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-markers="<%= @markers.to_json %>"
-  ></div>
+  <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>">
+  </div>
 </div>
