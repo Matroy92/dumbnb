@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
     def index
-        @offer = Offer.where.not(latitude: nil, longitude: nil)
-        @marker = @offer.map do |offer|
+        @offers = Offer.where.not(latitude: nil, longitude: nil)
+        @markers = @offers.map do |offer|
           { lat: offer.latitude, lng: offer.longitude}
         end
     end
