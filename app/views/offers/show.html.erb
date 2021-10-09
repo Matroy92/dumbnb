@@ -1,0 +1,80 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<section>
+    <div class="container">
+        <div class="carousel">
+            <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+            <ul class="carousel__slides">
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://www.denisbonzy.com/.a/6a00d83451c7ee69e201b7c7dc5ca3970b-pi" alt="">
+                        </div>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="http://www.slate.fr/sites/default/files/styles/1060x523/public/diner-de-cons-1998-11-g.jpg" alt="">
+                        </div>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://picsum.photos/id/1044/800/450" alt="">
+                        </div>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="https://picsum.photos/id/1045/800/450" alt="">
+                        </div>
+                    </figure>
+                </li>
+            </ul>
+            <ul class="carousel__thumbnails">
+                <li>
+                    <label for="slide-1"><img src="https://www.denisbonzy.com/.a/6a00d83451c7ee69e201b7c7dc5ca3970b-pi" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-2"><img src="http://www.slate.fr/sites/default/files/styles/1060x523/public/diner-de-cons-1998-11-g.jpg" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-3"><img src="https://images.lanouvellerepublique.fr/image/upload/5bae05ad7bbde517278b459d.jpg" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-4"><img src="https://picsum.photos/id/1045/150/150" alt=""></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+  <div class="container-fluid">
+    <div class="p-3 color rounded-3">
+        <h1 class= "title"><%= @offer.user_id %></h1>
+        <h2 class= "title size"><%= @offer.small_description %></h2>
+        <h3><%= @offer.address + ", " + @offer.city %></h3>
+        <p><%= @offer.small_description %></p>
+    </div>
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Copyright &copy; Dumbnb 2021</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="https://www.dummies.com/" class="text-dark">Terms of Use</a>
+                <span class="text-muted mx-2">|</span>
+                <a href="https://www.dummies.com/" class="text-dark">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+  </div>
+</div>
