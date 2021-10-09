@@ -23,7 +23,7 @@ class OffersController < ApplicationController
         @user = current_user
         @offer.user = @user
         if @offer.save
-          redirect_to offer_path(@offer)
+          redirect_to offers_path
         else
           render :new
         end
