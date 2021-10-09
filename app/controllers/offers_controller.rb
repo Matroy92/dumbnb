@@ -2,7 +2,11 @@ class OffersController < ApplicationController
     def index
         @offers = Offer.where.not(latitude: nil, longitude: nil)
         @markers = @offers.map do |offer|
-          { lat: offer.latitude, lng: offer.longitude}
+          {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
         end
     end
     
