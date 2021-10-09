@@ -10,12 +10,31 @@ require("@rails/activestorage").start()
 require("channels")
 
 import mapboxgl from 'mapbox-gl';
+const mapElement = document.getElementById('map');
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiemFrYXJpYWxtaiIsImEiOiJja3N0N2F4OHIwd2dzMnBwbnk0cGhydW9hIn0.lYL98kS1OqDKdf2SJtcyQg';
+mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11'
 });
+
+
+const markers = JSON.parse(mapElement.dataset.markers);
+
+markers.forEach((marker) => {
+  new mapboxgl.Marker()
+    .setLngLat([ marker.lng, marker.lat ])
+    .addTo(map);
+});
+
+
+
+
+
+
+
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
