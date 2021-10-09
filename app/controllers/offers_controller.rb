@@ -49,6 +49,6 @@ class OffersController < ApplicationController
     
       def offer_params
         params.require(:offer).permit(:description, :hour_rate, :availability_start_date, :availability_end_date,
-        :availability_start_hour, :availability_end_hour, :country, :city, :radius, :address, :small_description)
+        :availability_start_hour, :availability_end_hour, :address, :small_description)
       end
 end
