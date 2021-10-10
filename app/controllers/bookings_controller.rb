@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-    def new
+  def show
+    @booking = Booking.find(params[:offer_id])
+  end
+
+  def new
         @offer = Offer.find(params[:offer_id])
         @user = User.find(params[:user_id])
         @booking = Booking.new
