@@ -3,3 +3,13 @@ font-family: "Work Sans", "Helvetica", "sans-serif" ;
 color: grey;
 font-weight: 200 ;
 }
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: $yellow-dumbnb;
+}
