@@ -1,14 +1,18 @@
 class OffersController < ApplicationController
-    def index
-        @offers = Offer.where.not(latitude: nil, longitude: nil)
-        @markers = @offers.map do |offer|
-          {
-        lat: offer.latitude,
-        lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
-      }
-        end
+  def index
+    if params[:query].present?
+      @offers = Offer.where(small_description: params[:query])
+    else
+      @offers = Offer.where.not(latitude: nil, longitude: nil)
+      @markers = @offers.map do |offer|
+        {
+      lat: offer.latitude,
+      lng: offer.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+    }
+      end
     end
+  end
 
       def show
         @offer = Offer.find(params[:id])
