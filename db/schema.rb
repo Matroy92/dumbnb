@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_07_193934) do
+ActiveRecord::Schema.define(version: 2021_10_12_170224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,8 @@ ActiveRecord::Schema.define(version: 2021_10_07_193934) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "availability_start_date"
-    t.date "availability_end_date"
-    t.time "availability_start_hour"
-    t.time "availability_end_hour"
+    t.datetime "availability_start_date"
+    t.datetime "availability_end_date"
     t.string "country"
     t.string "city"
     t.integer "radius"
@@ -46,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_10_07_193934) do
     t.float "longitude"
     t.string "address"
     t.string "small_description"
+    t.string "date_range", default: [], array: true
+    t.date "date_range_bis", default: [], array: true
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
