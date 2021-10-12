@@ -58,9 +58,10 @@
 </section>
   <div class="container-fluid">
     <div class="p-3 color rounded-3">
-        <h1 class= "title"><%= @offer.user_id %></h1>
+
+        <h1 class= "title"><%= "#{@offer.user.firstname} #{@offer.user.lastname}" %></h1>
         <h2 class= "title size"><%= @offer.small_description %></h2>
-        <h3><%= @offer.address + ", " + @offer.city %></h3>
+        <h3><%= "#{@offer.address} , #{@offer.city}" %></h3>
         <p><%= @offer.small_description %></p>
     </div>
     <hr>
