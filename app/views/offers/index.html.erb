@@ -4,10 +4,12 @@
       <% @offers.each do |offer| %>
           <div class="m-3" style="width: 300px;">
             <div class="card-user">
+
               <div class="card-photo">  
               <%= cl_image_tag offer.photos.first.key if offer.photos.attached? %> 
               
                 <div class="card-body" style="height: 170px">
+
                   <div class="row">
                     <div class="col-8"> <h2 class="card-name"> <%=offer.user.firstname %> </h2>
                     </div>
@@ -16,6 +18,7 @@
                   </div>
                     <h5 class="card-desciption"><%= offer.small_description =%></h5>
                     <p class="card-price"><%= offer.hour_rate %>€ / heure </p>
+                  <% end %>
                 </div>
               </div>
             </div>

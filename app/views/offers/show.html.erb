@@ -58,24 +58,15 @@
 </section>
   <div class="container-fluid">
     <div class="p-3 color rounded-3">
-
-        <h1 class= "title"><%= "#{@offer.user.firstname} #{@offer.user.lastname}" %></h1>
+        <h1 class= "title"><%= "#{@offer.user.firstname}, #{@offer.user.lastname}" %></h1>
         <h2 class= "title size"><%= @offer.small_description %></h2>
-        <h3><%= "#{@offer.address} , #{@offer.city}" %></h3>
+        <h3><%=@offer.address%></h3>
         <p><%= @offer.small_description %></p>
+        <div class="center">
+        <%= link_to "Book this dumbass", "#", class: "btn btn-outline-info" %>
+        <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
+        </div>
     </div>
     <hr>
-    <footer>
-        <div class="row">
-            <div class="col-md-6">
-                <p>Copyright &copy; Dumbnb 2021</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <a href="https://www.dummies.com/" class="text-dark">Terms of Use</a>
-                <span class="text-muted mx-2">|</span>
-                <a href="https://www.dummies.com/" class="text-dark">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
   </div>
 </div>

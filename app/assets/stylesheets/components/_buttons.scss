@@ -12,3 +12,14 @@
     background: #1BCB7F;
     color: white;
   }
+
+  .btn {
+    margin-right: 2px;
+    &:hover {
+      color:white;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }

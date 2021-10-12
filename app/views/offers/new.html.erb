@@ -1,14 +1,15 @@
-<div class="container">
+<h2 class="text-center mt-4"> Etre con, ça peut vous rapporter de l'argent ! </h2>
+<div class="container mt-4">
 <%= simple_form_for [ @offer ] do |f| %>
-  <%= f.input :small_description %>
-  <%= f.input :description %>
-  <%= f.input :hour_rate %>
-  <%= f.input :availability_start_date %>
-  <%= f.input :availability_end_date %>
-  <%= f.input :availability_start_hour %>
-  <%= f.input :availability_end_hour %>
-  <%= f.input :address %>
+  <%= f.input :small_description, label: 'Une description de vos talents en quelques mots', placeholder: "Ex : On me dit souvent que je suis le fils caché de Jean-Marie Bigard ..."%>
+  <%= f.input :description, label: 'Dites-nous en plus sur vos talents de débile.', placeholder: "Ex : J'adore les films d'auteurs norvégiens sous-titrés swahili ..." %>
+  <%= f.input :hour_rate, label: 'Votre taux horaire', placeholder: 'Ex : 20€ / heure' %>
+  <%= f.input :availability_start_date, label: 'Date de début', as: :string,  input_html: {class: "datepicker"} %>
+  <%= f.input :availability_end_date, label: 'Date de fin', as: :string,  input_html: {class: "datepicker"} %>
+  <%= f.input :address, label: 'Votre adresse' %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Submit offer", class: "btn btn-primary" %>
+  <div class="text-center">
+  <%= f.submit "Je crée mon profil de con", class: "btn btn-outline-success mb-4" %>
+  </div>
 <% end %>
 </div>
