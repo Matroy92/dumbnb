@@ -4,7 +4,9 @@
       <% @offers.each do |offer| %>
           <div class="m-3" style="width: 300px;">
             <div class="card-user">
-              <div class="card-photo"> <img src="<%= image_path "guy.jpg" %>">
+              <div class="card-photo">  
+              <%= cl_image_tag offer.photos.first.key if offer.photos.attached? %> 
+              
                 <div class="card-body" style="height: 170px">
                   <div class="row">
                     <div class="col-8"> <h2 class="card-name"> <%=offer.user.firstname %> </h2>

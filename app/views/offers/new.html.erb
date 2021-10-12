@@ -8,6 +8,7 @@
   <%= f.input :availability_start_hour %>
   <%= f.input :availability_end_hour %>
   <%= f.input :address %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Submit offer", class: "btn btn-primary" %>
 <% end %>
 </div>
