@@ -26,7 +26,7 @@ class OffersController < ApplicationController
         @offer = Offer.new(offer_params)
         @user = current_user
         @offer.user = @user
-        if @offer.save
+        if @offer.save!
           redirect_to offers_path
         else
           render :new
@@ -53,6 +53,6 @@ class OffersController < ApplicationController
 
       def offer_params
         params.require(:offer).permit(:description, :hour_rate, :availability_start_date, :availability_end_date,
-        :availability_start_hour, :availability_end_hour, :address, :small_description)
+        :availability_start_hour, :availability_end_hour, :address, :small_description, photos: [])
       end
 end

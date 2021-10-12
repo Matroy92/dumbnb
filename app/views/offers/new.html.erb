@@ -7,6 +7,7 @@
   <%= f.input :availability_start_date, label: 'Date de début', as: :string,  input_html: {class: "datepicker"} %>
   <%= f.input :availability_end_date, label: 'Date de fin', as: :string,  input_html: {class: "datepicker"} %>
   <%= f.input :address, label: 'Votre adresse' %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <div class="text-center">
   <%= f.submit "Je crée mon profil de con", class: "btn btn-outline-success mb-4" %>
   </div>
