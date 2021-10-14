@@ -63,7 +63,7 @@
         <h3><%=@offer.address%></h3>
         <p><%= @offer.small_description %></p>
         <div class="center">
-        <%= link_to "Book this dumbass", "#", class: "btn btn-outline-info" %>
+        <%= link_to "Book this dumbass", new_offer_booking_path(@offer), class: "btn btn-outline-info" %>
         <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
         </div>
     </div>
