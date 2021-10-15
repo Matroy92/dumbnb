@@ -45,6 +45,7 @@
         <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
         <%= link_to "Réserver cette pépite", "offers_path", class: "btn btn-outline-info" %>
         <%= link_to "Je peux trouver mieux", offers_path, class: "btn btn-outline-info" %>
+        <%= link_to "Supprimer cette offre", offer_path,  method: :delete, class: "btn btn-outline-info", :data => {:confirm =>'Etes-vous vraiment sûr ?'} %>
         </div>
     </div>
     <hr>
