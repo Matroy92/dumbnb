@@ -1,1 +1,10 @@
 <h1> Felicitations, vous avez loué un con ! </h2>
+<div class="container-fluid">
+    <div class="p-3 color rounded-3">
+        <h1 class= "title"><%= "With #{@booking.offer.user.firstname}, #{@booking.offer.user.lastname}" %></h1>
+        <h2 class= "title size"><%= "When #{@booking.date}" %></h2>
+        <p><%= @booking.small_description %></p>
+        <div class="center">
+        <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
+        </div>
+    </div>

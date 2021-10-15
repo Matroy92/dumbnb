@@ -1,0 +1,10 @@
+<h2 class="text-center mt-4"> Les infos de réservation ! </h2>
+<div class="container mt-4">
+<%= simple_form_for  [@offer, @booking] do |f| %>
+  <%= f.input :date, label: 'Date de réservation', as: :string,  input_html: {class: "datepicker"} %>
+  <%= f.input :small_description, label: 'Décris ta réservation', placeholder: "Ex : On me dit souvent que je suis le fils caché de Jean-Marie Bigard ..."%>
+  <div class="text-center">
+  <%= f.submit "Je crée mon profil de con", class: "btn btn-outline-success mb-4" %>
+  </div>
+<% end %>
+</div>
