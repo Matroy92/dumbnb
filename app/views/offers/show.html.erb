@@ -35,11 +35,13 @@
         <h1 class= "title"><%= "#{@offer.user.firstname}, #{@offer.user.lastname}" %></h1>
         <h2 class= "title size"><%= @offer.small_description %></h2>
         <h3><%=@offer.address%></h3>
-        <p><%= @offer.small_description %></p>
+        <p><%= @offer.small_description %>
+        <br>
+        <br>
+        <%= "Je suis dispo du #{@offer.availability_start_date} au #{@offer.availability_end_date} !" %></p>
         <div class="center">
             <%= link_to "Je réserve cette pépite", new_offer_booking_path(@offer), class: "btn btn-outline-info" %>
             <%= link_to "Je peux trouver mieux", offers_path, class: "btn btn-outline-info" %>
-            <%= link_to "Supprimer cette offre", offer_path,  method: :delete, class: "btn btn-outline-info", :data => {:confirm =>'Etes-vous vraiment sûr ?'} %>
         </div>
     </div>
     <hr>
