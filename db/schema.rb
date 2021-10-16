@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_10_14_190964) do
 
   # These are extensions that must be enabled in order to support this database
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_190964) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.date "date"
+    t.datetime "date"
     t.integer "price"
     t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_190964) do
     t.time "from_hour"
     t.time "to_hour"
     t.integer "rating"
+    t.string "small_description"
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

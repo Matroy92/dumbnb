@@ -1,22 +1,22 @@
 class BookingsController < ApplicationController
   def show
-    @booking = Booking.find(params[:offer_id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
         @offer = Offer.find(params[:offer_id])
-        @user = User.find(params[:user_id])
+        @user = current_user
         @booking = Booking.new
     end
     
       def create
         @booking = Booking.new(booking_params)
         @offer = Offer.find(params[:offer_id])
-        @user = User.find(params[:user_id])
-        @booking.list = @list
+        @user = current_user
+        @booking.offer = @offer
         @booking.user = @user
         if @booking.save
-          redirect_to list_path(@offer)
+          redirect_to offer_booking_path(@offer, @booking)
         else
           render :new
         end
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
       private
     
       def booking_params
-        params.require(:booking).permit(:date, :price, :from_hour, :to_hour)
+        params.require(:booking).permit(:date, :small_description)
       end
     
 end

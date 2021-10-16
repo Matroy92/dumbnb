@@ -2,56 +2,34 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 <section>
     <div class="container">
+
+
         <div class="carousel">
             <input type="radio" name="slides" checked="checked" id="slide-1">
             <input type="radio" name="slides" id="slide-2">
             <input type="radio" name="slides" id="slide-3">
             <input type="radio" name="slides" id="slide-4">
             <input type="radio" name="slides" id="slide-5">
-            <input type="radio" name="slides" id="slide-6">
             <ul class="carousel__slides">
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img src="https://www.denisbonzy.com/.a/6a00d83451c7ee69e201b7c7dc5ca3970b-pi" alt="">
-                        </div>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img src="http://www.slate.fr/sites/default/files/styles/1060x523/public/diner-de-cons-1998-11-g.jpg" alt="">
-                        </div>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img src="https://picsum.photos/id/1044/800/450" alt="">
-                        </div>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img src="https://picsum.photos/id/1045/800/450" alt="">
-                        </div>
-                    </figure>
-                </li>
+                <% @offer.photos.each do |photo| %>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <%= cl_image_tag photo.key %>
+                            </div>
+                        </figure>
+                    </li>
+                <% end %>
             </ul>
             <ul class="carousel__thumbnails">
-                <li>
-                    <label for="slide-1"><img src="https://www.denisbonzy.com/.a/6a00d83451c7ee69e201b7c7dc5ca3970b-pi" alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-2"><img src="http://www.slate.fr/sites/default/files/styles/1060x523/public/diner-de-cons-1998-11-g.jpg" alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-3"><img src="https://images.lanouvellerepublique.fr/image/upload/5bae05ad7bbde517278b459d.jpg" alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-4"><img src="https://picsum.photos/id/1045/150/150" alt=""></label>
-                </li>
+                <% sum = 0 %>
+                <% @offer.photos.each do |photo| %>
+                    <li>
+                        <label for="slide-<%= "#{sum += 1}" %>"><%= cl_image_tag photo.key %></label>
+                    </li>
+                <% end %>
+
+
             </ul>
         </div>
     </div>
@@ -63,10 +41,12 @@
         <h3><%=@offer.address%></h3>
         <p><%= @offer.small_description %></p>
         <div class="center">
-        <%= link_to "Book this dumbass", "#", class: "btn btn-outline-info" %>
+        <%= link_to "Book this dumbass", new_offer_booking_path(@offer), class: "btn btn-outline-info" %>
         <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
+        <%= link_to "Réserver cette pépite", "offers_path", class: "btn btn-outline-info" %>
+        <%= link_to "Je peux trouver mieux", offers_path, class: "btn btn-outline-info" %>
+        <%= link_to "Supprimer cette offre", offer_path,  method: :delete, class: "btn btn-outline-info", :data => {:confirm =>'Etes-vous vraiment sûr ?'} %>
         </div>
     </div>
     <hr>
   </div>
-</div>
