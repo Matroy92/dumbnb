@@ -2,7 +2,8 @@
 <div class="container mt-4">
 <%= simple_form_for [ @offer ] do |f| %>
   <%= f.input :small_description, label: 'Une description de vos talents en quelques mots', placeholder: "Ex : On me dit souvent que je suis le fils caché de Jean-Marie Bigard ..."%>
-  <%= f.select :tag_list, ['option1', 'option2'] ,label:'tags (séparez par des virgules)'%>
+  <%= f.select :tag_list, ['Chiant', 'Bof', 'Trop passioné','Vulgaire', 'Con comme un balai', 'Dépressif', 'Limite-limite', 'Fait des blagues de merde'] ,prompt: 'Select tag'%>
+  <br><br>
   <%= f.input :description, label: 'Dites-nous en plus sur vos talents de débile.', placeholder: "Ex : J'adore les films d'auteurs norvégiens sous-titrés swahili ..." %>
   <%= f.input :hour_rate, label: 'Votre taux horaire', placeholder: 'Ex : 20€ / heure' %>
   <%= f.input :availability_start_date, label: 'Date de début', as: :string,  input_html: {class: "datepicker"} %>
