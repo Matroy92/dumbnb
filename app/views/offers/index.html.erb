@@ -5,8 +5,7 @@
           <div class="m-3" style="width: 300px;">
             <div class="card-user">
 
-              <div class="card-photo">  
-              <%= cl_image_tag offer.photos.first.key if offer.photos.attached? %> 
+              <div class="card-photo"> <%= cl_image_tag offer.photos.first.key if offer.photos.attached? %> 
               
                 <div class="card-body" style="height: 170px">
 
@@ -17,9 +16,10 @@
                     </div>
                   </div>
                     <h5 class="card-desciption"><%= offer.small_description =%></h5>
+                    <p>Tags: <%= raw offer.tag_list.map {|t| link_to t , tag_path(t)}.join(', ')%></p>
                     <p class="card-price"><%= offer.hour_rate %>€ / heure </p>
                 </div>
-              </div>
+              </div> 
             </div>
         </div>
       <% end %>
