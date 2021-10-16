@@ -2,6 +2,13 @@ class OffersController < ApplicationController
   def index
     if params[:tag]
       @offers = Offer.tagged_with(params[:tag])
+      @markers = @offers.map do |offer|
+        {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+        }
+      end
     else
 
       if params[:query].present?
