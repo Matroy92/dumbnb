@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
         @user = current_user
         @booking = Booking.new
     end
-    
+
       def create
         @booking = Booking.new(booking_params)
         @offer = Offer.find(params[:offer_id])
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
           render :new
         end
       end
-    
+
       def destroy
         @booking = Booking.find(params[:id])
         @booking.destroy
@@ -29,9 +29,9 @@ class BookingsController < ApplicationController
       end
 
       private
-    
+
       def booking_params
-        params.require(:booking).permit(:date, :small_description)
+        params.require(:booking).permit(:date, :small_description, :address)
       end
-    
+
 end
