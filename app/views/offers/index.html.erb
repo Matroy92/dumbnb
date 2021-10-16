@@ -5,7 +5,7 @@
           <div class="m-3" style="width: 300px;">
             <div class="card-user">
 
-              <div class="card-photo"> <%= cl_image_tag offer.photos.first.key if offer.photos.attached? %> 
+              <div class="card-photo"> <% if offer.photos.attached? %><%= cl_image_tag offer.photos.first.key, gravity: :face  %> <%end%>
               
                 <div class="card-body" style="height: 170px">
                   <%= link_to offer_path(offer), class: "link" do %>
