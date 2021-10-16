@@ -66,8 +66,6 @@ ActiveRecord::Schema.define(version: 2021_10_14_185142) do
     t.float "longitude"
     t.string "address"
     t.string "small_description"
-    t.string "date_range", default: [], array: true
-    t.date "date_range_bis", default: [], array: true
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
