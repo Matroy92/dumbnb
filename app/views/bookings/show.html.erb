@@ -1,10 +1,41 @@
-<h1> Felicitations, vous avez loué un con ! </h2>
+<h1> Felicitations, vous avez loué un con ! </h1>
 <div class="container-fluid">
     <div class="p-3 color rounded-3">
-        <h1 class= "title"><%= "With #{@booking.offer.user.firstname}, #{@booking.offer.user.lastname}" %></h1>
-        <h2 class= "title size"><%= "When #{@booking.date}" %></h2>
-        <p><%= @booking.small_description %></p>
-        <div class="center">
-        <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
+        <h1 class= "title"><%= "#{@booking.offer.user.firstname}, #{@booking.offer.user.lastname} est ton con !" %></h1>
+        <h2><%= "#{@booking.date}"%></h2>
+        <p><%= @booking.small_description %>
+        </p>
+        <br>
+        <div class="container">
+            <div class="carousel">
+                <input type="radio" name="slides" checked="checked" id="slide-1">
+                <input type="radio" name="slides" id="slide-2">
+                <input type="radio" name="slides" id="slide-3">
+                <input type="radio" name="slides" id="slide-4">
+                <input type="radio" name="slides" id="slide-5">
+                <ul class="carousel__slides">
+                    <% @booking.offer.photos.each do |photo| %>
+                        <li class="carousel__slide">
+                            <figure>
+                                <div>
+                                    <%= cl_image_tag photo.key %>
+                                </div>
+                            </figure>
+                        </li>
+                    <% end %>
+                </ul>
+                <ul class="carousel__thumbnails">
+                    <% sum = 0 %>
+                    <% @booking.offer.photos.each do |photo| %>
+                        <li>
+                            <label for="slide-<%= "#{sum += 1}" %>"><%= cl_image_tag photo.key %></label>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="center">
+                <%= link_to "Go back to dummies", offers_path, class: "btn btn-outline-info" %>
+            </div>
         </div>
     </div>
+</div>
