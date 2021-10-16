@@ -1,15 +1,21 @@
 class OffersController < ApplicationController
   def index
-    if params[:query].present?
-      @offers = Offer.where(small_description: params[:query])
+    if params[:tag]
+      @offers = Offer.tagged_with(params[:tag])
     else
-      @offers = Offer.where.not(latitude: nil, longitude: nil)
-      @markers = @offers.map do |offer|
-        {
-      lat: offer.latitude,
-      lng: offer.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { offer: offer })
-    }
+
+      if params[:query].present?
+       
+        @offers = Offer.where(small_description: params[:query])
+      else
+        @offers = Offer.where.not(latitude: nil, longitude: nil)
+        @markers = @offers.map do |offer|
+          {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+        end
       end
     end
   end
@@ -53,6 +59,6 @@ class OffersController < ApplicationController
 
       def offer_params
         params.require(:offer).permit(:description, :hour_rate, :availability_start_date, :availability_end_date,
-        :availability_start_hour, :availability_end_hour, :address, :small_description, photos: [])
+        :availability_start_hour, :availability_end_hour, :address, :tag_list, :tag, :small_description, photos: [])
       end
 end
