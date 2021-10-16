@@ -6,7 +6,7 @@ class OffersController < ApplicationController
 
       if params[:query].present?
        
-        @offers = Offer.where(small_description: params[:query])
+        @offers = Offer.where("small_description ILIKE ?", "%#{params[:query]}%")
       else
         @offers = Offer.where.not(latitude: nil, longitude: nil)
         @markers = @offers.map do |offer|
